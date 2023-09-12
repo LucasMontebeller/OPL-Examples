@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ASCII"?><project>
+    	
+    <version>1.0</version>
+    	
+    <description>Projeto inicial para aprendizado da IDE e da linguagem OPL</description>
+    	
+    <configs>
+        		
+        <config default="true" name="Ex1" category="opl">
+            			
+            <ref name="Aula1.mod" type="model">
+			</ref>
+            		
+        </config>
+        		
+        <config default="false" name="Ex2_b" category="opl">
+            			
+            <ref name="Aula2_b.mod" type="model">
+			</ref>
+            		
+        </config>
+        		
+        <config default="false" name="Ex2_a" category="opl">
+            			
+            <ref name="Aula2_a.mod" type="model">
+			</ref>
+            		
+        </config>
+        		
+        <config default="false" name="Ex3" category="opl">
+            			
+            <ref name="Aula3.mod" type="model">
+			</ref>
+            		
+        </config>
+        		
+        <config default="false" name="Ex4" category="opl">
+            			
+            <ref name="Aula4.mod" type="model">
+			</ref>
+            		
+        </config>
+        	
+    </configs>
+    	
+
+</project>
