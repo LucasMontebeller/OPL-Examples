@@ -1,0 +1,25 @@
+/*********************************************
+ * OPL 22.1.1.0 Data
+ * Author: lucas
+ * Creation Date: 12 de set de 2023 at 12:17:26
+ *********************************************/
+Ingredientes = {"Milho", "Calcário", "Soja", "Farinha de Peixe"}; 
+Nutrientes = {"Vitaminas", "Proteinas", "Cálcio", "Gordura bruta"};
+Racoes = {"Gado", "Ovelha", "Galinha"}; 
+
+Tabela_Nutricional = [	[8, 10, 6, 8],
+						[6, 5, 10, 6],
+						[10, 12, 6, 6],
+						[4, 8, 6, 9]	];
+
+Demanda = [10, 6, 8];
+Suprimento = [6, 10, 4, 5];
+Custo = [0.0002, 0.00012, 0.00024, 0.00012]; // kg --> ton
+
+Min_Nutrientes = [	[6, 6, 7, 4],
+					[6, 6, 6, 4],
+					[4, 6, 6, 4]	];
+					
+Max_Nutrientes = [	[maxint, maxint, maxint, 8],
+					[maxint, maxint, maxint, 8],
+					[6, maxint, maxint, 8]	];
