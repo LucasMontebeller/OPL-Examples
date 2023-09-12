@@ -40,6 +40,16 @@
 			</ref>
             		
         </config>
+        		
+        <config default="false" name="Ex5" category="opl">
+            			
+            <ref name="Aula5.dat" type="data">
+			</ref>
+            			
+            <ref name="Aula5.mod" type="model">
+			</ref>
+            		
+        </config>
         	
     </configs>
     	
