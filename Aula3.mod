@@ -24,3 +24,12 @@ subject to {
 	  	sum(e in Evento)
 	 		Acessos[s][e] * x[e] >= AcessoMinimo[s];
 }
+
+// Pós processamento --> ref: Aula 8
+execute RESUTLADOS {
+  writeln("Resultados: ");
+  for (var e in Evento) {
+    writeln("Minutos para o show de " + e + ': ' + x[e]);
+  }
+  writeln("Valor função objetivo: ", cplex.getObjValue());
+}

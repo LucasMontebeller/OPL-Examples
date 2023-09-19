@@ -1,0 +1,16 @@
+/*********************************************
+ * OPL 22.1.1.0 Data
+ * Author: lucas
+ * Creation Date: 18 de set de 2023 at 13:41:49
+ *********************************************/
+// Exemplo 5 feito importando uma planilha .csv --> não está reconhecendo a coluna custo corretamente.
+// SheetConnection não é válido em Linux
+
+Usinas = {"u1", "u2", "u3"};
+Cidades = {"c1", "c2", "c3", "c4"};
+
+CSVConnection csvinput("Aula7.csv?firstIsHeader=true", "");
+
+Custo from CSVRead(csvinput, "B2:E4");
+KWh_Hora from CSVRead(csvinput, "Kwh_Hora");
+Demanda_Pico from CSVRead(csvinput, "Demanda_Pico");

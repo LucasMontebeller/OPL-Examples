@@ -60,6 +60,26 @@
 			</ref>
             		
         </config>
+        		
+        <config default="false" name="Ex7" category="opl">
+            			
+            <ref name="Aula7.mod" type="model">
+			</ref>
+            			
+            <ref name="Aula7.dat" type="data">
+			</ref>
+            		
+        </config>
+        		
+        <config default="false" name="Ex8" category="opl">
+            			
+            <ref name="Aula9.mod" type="model">
+			</ref>
+            			
+            <ref name="Aula9.dat" type="data">
+			</ref>
+            		
+        </config>
         	
     </configs>
     	
