@@ -6,7 +6,7 @@
     	
     <configs>
         		
-        <config default="true" name="Ex1" category="opl">
+        <config default="false" name="Ex1" category="opl">
             			
             <ref name="Aula1.mod" type="model">
 			</ref>
@@ -77,6 +77,13 @@
 			</ref>
             			
             <ref name="Aula9.dat" type="data">
+			</ref>
+            		
+        </config>
+        		
+        <config default="true" name="Ex9" category="opl">
+            			
+            <ref name="Aula10.mod" type="model">
 			</ref>
             		
         </config>
