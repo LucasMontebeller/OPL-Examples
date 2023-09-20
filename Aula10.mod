@@ -11,17 +11,25 @@ tuple Coordenada {
 }
 
 {Coordenada} Cidades = {};
+Coordenada PrimeiraCidade;
 int TotalCidades = 31; // Limite de 1000 variáveis nesta versão
 float MatrizDistancia[Cidades][Cidades];
 
 dvar boolean x[Cidades][Cidades]; // Variavél que indica se o caixeiro irá da cidade i para a j
+dvar float+ u[Cidades]; // Variável auxiliar para controle de subRotas
 
 // Pré processamento
 execute {
   
   	function GeraCidades(limiteX, limiteY) {
 		for (i = 0; i < TotalCidades; i++) {
-			Cidades.add(Opl.rand(limiteX), Opl.rand(limiteY));
+		  	var x = Opl.rand(limiteX);
+		  	var y = Opl.rand(limiteY);
+		  	if (i == 0) {
+		  		PrimeiraCidade.x = x;
+		  		PrimeiraCidade.y = y;
+		  	}
+			Cidades.add(x, y);
 		}
   	}
   	
@@ -37,15 +45,30 @@ execute {
   		  MatrizDistancia[i][j] = CalculaDistancia(i, j);
   		}
   	}
+  	  	
 }
 
+//dexpr float Caminho = sum(i in Cidades, j in Cidades : i != j) MatrizDistancia[i][j] * x[i][j];
+
 minimize 
-	sum(i in Cidades, j in Cidades)
+	sum(i in Cidades, j in Cidades : i != j) 
 		MatrizDistancia[i][j] * x[i][j];
 
 subject to {
+	// Restrição de saida
 	forall(i in Cidades) {
 		sum(j in Cidades : i != j)
 			x[i][j] == 1;
+	}
+	
+	// Restrição de entrada
+	forall(j in Cidades) {
+		sum(i in Cidades : i != j)
+			x[i][j] == 1;
+	}
+	
+	// Eliminar Subrotas
+	forall(i in Cidades, j in Cidades : i != PrimeiraCidade && j != PrimeiraCidade && i != j) {
+		u[i] - u[j] + TotalCidades * x[i][j] <= TotalCidades - 1;
 	}
 }
